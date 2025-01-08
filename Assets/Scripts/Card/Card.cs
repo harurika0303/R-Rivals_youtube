@@ -1,16 +1,19 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] TextMeshProUGUI nameText;
+    [SerializeField] TextMeshProUGUI numberText;
+    [SerializeField] Image icon;
+    [SerializeField] TextMeshProUGUI descriptionText;
 
-    // Update is called once per frame
-    void Update()
+    public void Set(CardBase cardBase)
     {
-        
+        nameText.text = cardBase.Name;
+        numberText.text = cardBase.Number.ToString();
+        icon.sprite = cardBase.Icon;
+        descriptionText.text = cardBase.Description;
     }
 }
